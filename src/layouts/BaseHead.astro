@@ -1,0 +1,25 @@
+---
+import { baseData } from "@/data/siteData";
+type Props = {
+  title?: string;
+  description?: string;
+};
+// title & description default to baseData
+const { title = baseData.title, description = baseData.description } =
+  Astro.props;
+---
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="generator" content={Astro.generator} />
+  <meta name="description" content={description} />
+  <title>{title}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,300;1,300&display=swap"
+    rel="stylesheet"
+  />
+</head>

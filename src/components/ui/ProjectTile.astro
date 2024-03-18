@@ -1,0 +1,13 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+type Props = {
+  data: CollectionEntry<"projects">["data"];
+};
+
+const { data } = Astro.props;
+const { title, url, icons, thumbnail } = data;
+---
+
+
+<article aria-label={title} class="project-tile">{data.title}</article>

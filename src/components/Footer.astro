@@ -1,0 +1,20 @@
+---
+import { socialData } from "@/data/siteData";
+import { Icon } from "astro-icon/components";
+---
+<footer>
+  <div>
+    <p>&copy; <span id="copyright">{new Date().getFullYear()}</span> Peter Chapman. All rights reserved. You no toucha or I breaka you face.</p>
+    <ul>
+      {
+        socialData.map(({ href, icon, title }) => (
+          <li>
+            <a href={href} aria-title={title} title={title} target="_blank">
+              <Icon name={icon} size={24} />
+              </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</footer>
